@@ -3,8 +3,26 @@ title: "Practice Connecting"
 output: html_notebook
 ---
 
-The following code is to practice using the ??? API required for our research.
+Setup from :
+http://r-pkgs.had.co.nz/git.html
 
-test
+
+```{r}
+
+library(synapser)
+synLogin(
+'uname',
+'secret')
+#create project online at this point
+
+#access project online with below code
+myProj <- synStore(Project(name="Practice Project"))
+print(paste('Created a project with Synapse id', myProj$properties$id, sep = ' '))
+
+
+#opens browser window to project
+synOnweb(myProj)
+
+```
 
 
